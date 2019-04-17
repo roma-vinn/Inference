@@ -4,7 +4,7 @@ File ```'main.py'``` consist class ```Formula```, which
 represents corresponding mathematical object – Propositional
 calculus formula. 
 
-Initialization is strict. It's needed to:
+Initialization is strict. Required:
 - use spaces between each symbol of variable, logical connectivity
 or scope;
 - use only implication (```->```) and negation (```!```);
@@ -14,7 +14,10 @@ Example:
 ```python
 from main import Formula
 
-formula = Formula('( x1 -> ( ! x2 -> x1 ) )')
+formula = Formula('( x1 -> ( ! x2 -> x1 ) )')  # Correct
+# formula = Formula('(x1 -> (!x2 -> x1))')  # Incorrect
+# formula = Formula('x1 -> x2')  # Incorrect
+# formula = Formula('( ( x1 -> x3 ) )')  # Incorrect
 ```
 
 ## Tautology checking
